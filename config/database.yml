@@ -52,11 +52,3 @@ production:
   database: photobank_production
   username: photobank
   password: <%= ENV['PHOTOBANK_DATABASE_PASSWORD'] %>
-
-gem 'devise'
-
-gem 'active_hash'
-
-gem 'mini_magick'
-
-gem 'image_processing', '~> 1.2'
