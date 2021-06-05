@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: photobank_production
-  username: photobank
-  password: <%= ENV['PHOTOBANK_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
