@@ -1,0 +1,106 @@
+<body>
+  <header class="header">
+
+
+      <div class="nav">
+
+        <div class=nav__left>
+          <div class="nav__left__left">
+            <%= link_to image_tag('mini_icon.png' , size: '50x50'), "/" %>
+          </div>
+          <div class="nav__left__right">
+            <%= link_to image_tag("title.png", size: '180x50'), "/" %>
+          </div>
+        </div>
+
+        <% if user_signed_in? %>
+        <div class="nav__right">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+          <%= link_to "マイページ", "#", class: :nav__btn %>
+          <%= link_to "　　投稿する　　", "#", class: :nav__btn %>
+        </div>
+        <% else %>
+        <div class="nav__right">
+          <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+          <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+        </div>
+
+        <% end %>
+      </div>
+
+  </header>
+
+
+  <main class="main">
+      <div class="inner">
+      <% if user_signed_in? %>
+        <div class="greeting">
+          <span class="top_message">こちらは
+          <%= link_to "#{current_user.nickname}様", class: :greeting__link%>
+          のトップページです。</span>
+        </div>
+      <% end %>
+  <div class="sub__main">
+      <div class="card__wrapper">
+        <div class="image">
+
+          <% if user_signed_in? %>
+            <div>
+              <div class="frame">
+              <%= link_to image_tag('sendaistation1.jpg' , size: '350x250'), "/" %>
+              </div>
+                <div>
+                仙台駅（1970年代）
+                  <div>
+                  投稿者：山田太郎
+                  </div>
+                </div>
+              </div>
+
+            <div>
+              <div class="frame">
+              <%= link_to image_tag('sensekiline.jpg' , size: '350x250'), "/" %>
+              </div>
+                <div>
+                仙石線（1993年）
+                  <div>
+                  投稿者：やまちゃん
+                  </div>
+                </div>
+              </div>
+
+            <div>
+              <div class="frame">
+              <%= link_to image_tag('machinami.jpg' , size: '350x250'), "/" %>
+              </div>
+                <div>
+                  東二番町大通り（1980年頃）
+                    <div>
+                    投稿者：kurokawa
+                    </div>
+                </div>
+            </div>
+          <% else %>
+            <div>
+              <div>
+                <%= link_to image_tag('natukasi' , size: '900x560'), "/" %>
+              </div>
+              <div class="hot__message">
+                古い写真のあの場所は、今はこんな風になっている。<br>
+                <br>
+                あなたの好きなその場所の昔​の姿を追いかけてみませんか。
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+        <%# render partial: 'tweets', collection: @tweets %>
+      </div>
+    </div>
+  </div>
+  </main>
+
+  <footer class="footer">
+    <p class="copyright">Copyright © PhotoBank All rights reserved.</p>
+  </footer>
+</body>
