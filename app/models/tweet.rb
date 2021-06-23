@@ -1,9 +1,12 @@
 class Tweet < ApplicationRecord
 
-  # validates :prefecture_id, prefecture: true
-  # validates :city, prefecture: true
-  # validates :title, prefecture: true
-  # validates :description, prefecture: true
-  # validates :image, presence: true
+  validates :prefecture_id, presence: true
+  validates :city, presence: true
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :photo, presence: true
+
+  has_one_attached :photo
+  belongs_to :user
 
 end

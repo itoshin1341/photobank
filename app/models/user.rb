@@ -33,7 +33,7 @@ class User < ApplicationRecord
   validates_format_of :password, with: PASSWORD_REGEX, message: "パスワードは、半角英数字混合かつ6文字以上にて入力してください。" 
 
   has_one_attached :image
-  # has_many :tweets
+  has_many :tweets
   # has_many :comments
 
 end
