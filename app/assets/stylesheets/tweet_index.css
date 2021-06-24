@@ -220,18 +220,19 @@ a {
 .prototype__btn{
   display: block;
   padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #999;
+  font-size: 20px;
+  color: rgb(212, 162, 24);
+  background-color: rgb(255, 247, 225);
   text-decoration: none;
   user-select: none;
-  border: 1px #999 solid;
+  border: 2px rgb(212, 162, 24) solid;
   border-radius: 3px;
   transition: 0.4s ease;
-  margin: 0 4px;
+  margin: 20px 4px;
 }
 .prototype__btn:hover{
   color: #fff;
-  background: #999;
+  background: rgb(212, 162, 24);
 }
 
 .prototype__comments{

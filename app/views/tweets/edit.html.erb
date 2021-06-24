@@ -5,7 +5,7 @@
 <div class="items-sell-contents">
   <div class="items-sell-main">
     <h2 class="items-sell-title">写真とその情報の入力</h2>
-    <%= render partial: "form"%>
+    <%= render partial: "form", locals: { tweet: @tweet } %>
   </div>
 
   <footer class="items-sell-footer">
