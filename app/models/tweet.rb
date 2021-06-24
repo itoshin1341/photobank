@@ -6,6 +6,9 @@ class Tweet < ApplicationRecord
   validates :description, presence: true
   validates :photo, presence: true
 
+  extend ActiveHash::Associations::ActiveRecordExtensions 
+  belongs_to :prefecture
+
   has_one_attached :photo
   belongs_to :user
 

@@ -1,0 +1,90 @@
+<body>
+  <header class="header">
+    <div class="nav">
+      <div class=nav__left>
+        <div class="nav__left__left">
+          <%= link_to image_tag('mini_icon.png' , size: '50x50'), "/" %>
+        </div>
+        <div class="nav__left__right">
+          <%= link_to image_tag("title.png", size: '180x50'), "/" %>
+        </div>
+      </div>
+      <% if user_signed_in? %>
+        <div class="nav__right">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+          <%= link_to "マイページ", "#", class: :nav__btn %>
+          <%= link_to "　　投稿する　　", new_tweet_path, class: :nav__btn %>
+        </div>
+        <% else %>
+        <div class="nav__right">
+          <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+          <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+        </div>
+      <% end %>
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="inner">
+      <div class="prototype__wrapper">
+        <p class="show__hedding">
+          <%= @tweet.title %>
+        </p>
+        <div class="show__user">
+        <%= link_to "投稿者：#{@tweet.user.nickname}" %>
+        </div>
+        <% if user_signed_in? && current_user.id == @tweet.user_id %>
+          <div class="prototype__manage">
+            <%# link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
+            <%# link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :prototype__btn %>
+          </div>
+        <% end %>
+        <div class="show__image">
+          <%= image_tag(@tweet.photo, size: '800x500') %>
+        </div>
+        <div class="prototype__body">
+          <div class="prototype__detail">
+            <p class="detail__title">写真の場所</p>
+            <p class="detail__message">
+              <%= @tweet.prefecture.name %>
+              <%= @tweet.city %>
+            </p>
+          </div>
+          <div class="prototype__detail">
+            <p class="detail__title">解　説</p>
+            <p class="detail__message">
+              <%= @tweet.description %>
+            </p>
+          </div>
+        </div>
+        <div class="prototype__comments">
+          <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+          <% if user_signed_in? %>
+            <%# form_with model: [@tweet,@comment], local: true do |f|%>
+              <div class="field">
+                <%# f.label :text, "コメント" %><br />
+                <%# f.text_field :text, id:"comment_text" %>
+              </div>
+              <div class="actions">
+                <%# f.submit "送信する", class: :form__btn  %>
+              </div>
+            <%# end %>
+          <% end %> 
+          <%# // ログインしているユーザーには上記を表示する %>
+          <ul class="comments_lists">
+            <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+            <%# @comments.each do |comment|%>
+              <li class="comments_list">
+              <%# comment.text %>
+              <%# link_to comment.user.name, "/users/#{comment.user.id}",  class: :comment_user %>
+              </li>
+            <%# end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="copyright">Copyright © PhotoBank All rights reserved.</p>
+  </footer>
+</body>
