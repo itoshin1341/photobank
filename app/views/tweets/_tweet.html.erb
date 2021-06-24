@@ -1,12 +1,11 @@
 <div>
   <div class="frame">
-    <%= link_to image_tag(tweet.photo, size: '350x250', class: :photo__img ) %>
-    <%# link_to image_tag(tweet.photo, class: :card__img ), tweet_path(tweet.id)%>
+    <%= link_to image_tag(tweet.photo, size: '350x250', class: :photo__img ), tweet_path(tweet.id) %>
   </div>
   <div class="card__body">
-    <%= link_to tweet.title, class: :card__title %>
-    <%# link_to tweet.title, tweet_path(tweet.id), class: :card__title %>
+    <%= link_to tweet.title, tweet_path(tweet.id), class: :card__title %>
       <p class="card__summary">
+        <%= tweet.prefecture.name %>
         <%= tweet.city %>
       </p>
     <%= link_to "投稿者：#{tweet.user.nickname}", class: :card__user %>
