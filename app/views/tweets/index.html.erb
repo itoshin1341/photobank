@@ -12,7 +12,7 @@
       <% if user_signed_in? %>
         <div class="nav__right">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-          <%= link_to "マイページ", "#", class: :nav__btn %>
+          <%= link_to "マイページ", user_path(current_user.id), class: :nav__btn %>
           <%= link_to "　　投稿する　　", new_tweet_path, class: :nav__btn %>
         </div>
         <% else %>
@@ -29,7 +29,7 @@
       <% if user_signed_in? %>
         <div class="greeting">
           <span class="top_message">こちらは
-          <%= link_to "#{current_user.nickname}様", class: :greeting__link%>
+          <%= link_to "#{current_user.nickname}様", user_path(current_user.id), class: :greeting__link%>
           のトップページです。</span>
         </div>
       <% end %>

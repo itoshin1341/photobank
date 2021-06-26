@@ -1,0 +1,77 @@
+<body>
+  <header class="header">
+    <div class="nav">
+      <div class=nav__left>
+        <div class="nav__left__left">
+          <%= link_to image_tag('mini_icon.png' , size: '50x50'), "/" %>
+        </div>
+        <div class="nav__left__right">
+          <%= link_to image_tag("title.png", size: '180x50'), "/" %>
+        </div>
+      </div>
+      <% if user_signed_in? %>
+        <div class="nav__right">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
+          <%= link_to "マイページ", "#", class: :nav__btn %>
+          <%= link_to "　　投稿する　　", new_tweet_path, class: :nav__btn %>
+        </div>
+        <% else %>
+        <div class="nav__right">
+          <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+          <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+        </div>
+      <% end %>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="inner">
+      <div class="user__wrapper">
+        <h2 class="page-heading">
+          <%= "#{@user.nickname}様の情報です。"%>
+        </h2>
+        <div>
+          <%# 以下はアイコンを表示する記述をする %>
+          <%# image_tag @user.image.url %>
+        </div>
+        <table class="table">
+          <tr>
+            <th class="table__col1">ニックネーム</th>
+            <td class="table__col2"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">お住まいの都道府県</th>
+            <td class="table__col2"><%= @user.prefecture.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">お住まいの市町村</th>
+            <td class="table__col2"><%= @user.city %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">性別</th>
+            <td class="table__col2"><%= @user.gender.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">誕生日</th>
+            <td class="table__col2"><%= @user.birthday %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">自己紹介</th>
+            <td class="table__col2"><%= @user.introduction %></td>
+          </tr>
+        </table>
+        <h2 class="page-heading">
+          <%= "#{@user.nickname}様の投稿写真一覧です。"%>
+        </h2>
+        <div class="user__card">
+          <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+          <%= render partial: 'tweets/tweet', collection: @user.tweets %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="copyright">Copyright © PhotoBank All rights reserved.</p>
+  </footer>
+</body>
