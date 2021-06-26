@@ -24,6 +24,7 @@ class User < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :prefecture
+  belongs_to :gender
 
   with_options presence: true, numericality: { other_than: 1 } do
     validates :prefecture_id
@@ -31,6 +32,8 @@ class User < ApplicationRecord
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: "パスワードは、半角英数字混合かつ6文字以上にて入力してください。" 
+
+  # mount_uploader :image, ImageUploader
 
   has_one_attached :image
   has_many :tweets
