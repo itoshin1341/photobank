@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
 
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_tweet, except: [:index, :new, :create]
+  before_action :contributor_confirmation, only: [:edit, :update, :destroy]
 
   def index
     @tweets = Tweet.includes(:user)
@@ -51,5 +52,9 @@ class TweetsController < ApplicationController
 
   def set_tweet
     @tweet = Tweet.find(params[:id])
+  end
+
+  def contributor_confirmation
+    redirect_to root_path unless current_user == @tweet.user
   end
 end
