@@ -26,7 +26,7 @@
 
   <main class="main">
     <div class="inner">
-      <div class="prototype__wrapper">
+      <div class="photo__wrapper">
         <p class="show__hedding">
           <%= @tweet.title %>
         </p>
@@ -34,30 +34,30 @@
         <%= link_to "投稿者：#{@tweet.user.nickname}" %>
         </div>
         <% if user_signed_in? && current_user.id == @tweet.user_id %>
-          <div class="prototype__manage">
-            <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
-            <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :prototype__btn %>
+          <div class="photo__manage">
+            <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :photo__btn %>
+            <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :photo__btn %>
           </div>
         <% end %>
         <div class="show__image">
           <%= image_tag(@tweet.photo, size: '800x500') %>
         </div>
-        <div class="prototype__body">
-          <div class="prototype__detail">
+        <div class="photo__body">
+          <div class="photo__detail">
             <p class="detail__title">写真の場所</p>
             <p class="detail__message">
               <%= @tweet.prefecture.name %>
               <%= @tweet.city %>
             </p>
           </div>
-          <div class="prototype__detail">
+          <div class="photo__detail">
             <p class="detail__title">解　説</p>
             <p class="detail__message">
               <%= @tweet.description %>
             </p>
           </div>
         </div>
-        <div class="prototype__comments">
+        <div class="photo__comments">
           <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <% if user_signed_in? %>
             <%# form_with model: [@tweet,@comment], local: true do |f|%>
