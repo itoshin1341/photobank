@@ -15,7 +15,6 @@ div {
   padding: 0;
 }
 
-
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #3b4043;
@@ -36,16 +35,17 @@ a {
 }
 
 /* ヘッダー */
-
 .header {
   background-color: rgb(255, 255, 255);
   padding: 20px 0;
 
 }
+
 .inner {
   width: 100vw;
   text-align : center;
 }
+
 .nav {
   width: 100%;
   padding: 0 30px;
@@ -73,6 +73,7 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
+
 .nav__btn:hover{
   color: #fff;
   background: rgb(243, 208, 113)
@@ -89,6 +90,7 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
 }
+
 .nav__logout:hover{
   color: #fff;
   background: rgb(243, 208, 113)
@@ -122,42 +124,49 @@ a {
 }
 
 /* メイン */
-
 .greeting{
   margin-bottom: 20px;
   display: flex;
   align-items: flex-start;
 }
+
 .greeting__link{
   text-decoration: underline;
 }
+
 .page-heading {
   font-size: 30px;
   margin-top: 20px;
   margin-bottom: 28px;
 }
+
 .card__wrapper {
   width: 100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
 .card__body {
   margin-top: 10px;
   text-align: center;
 }
+
 .card__img {
   margin-bottom: 16px;
 }
+
 .card__title {
   display: block;
   font-size: 20px;
   margin-bottom: 8px;
   font-weight: bold;
 }
+
 .card__summary {
   font-size: 16px;
 }
+
 .card__user {
   display: block;
   font-size: 12px;
@@ -189,38 +198,25 @@ a {
   margin: 20px;
   text-align : center;
 }
+
 /* 詳細ページ */
-.prototype__wrapper{
+.photo__wrapper{
   min-height: calc(100vh - 161px);
 }
-.prototype__hedding{
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-.prototype__user{
-  display: block;
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  text-decoration: underline;
-}
-.prototype__image{
-  width: 40%;
-  margin: 0 auto;
-  padding: 16px 0;
-}
+
 .detail__title{
   margin-bottom: 10px;
   font-size: 20px;
   font-weight: bold;
 }
-.prototype__manage{
+
+.photo__manage{
   display: flex;
   justify-content: center;
   padding-top: 16px;
 }
-.prototype__btn{
+
+.photo__btn{
   display: block;
   padding: 0.4em 1.6em;
   font-size: 20px;
@@ -233,12 +229,13 @@ a {
   transition: 0.4s ease;
   margin: 20px 4px;
 }
-.prototype__btn:hover{
+
+.photo__btn:hover{
   color: #fff;
   background: rgb(212, 162, 24);
 }
 
-.prototype__comments{
+.photo__comments{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
@@ -278,6 +275,7 @@ a {
 .user__wrapper{
   min-height: calc(100vh - 161px);
 }
+
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
@@ -285,6 +283,7 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
 .table__col1{
   text-align: left;
   font-weight: bold;
@@ -294,6 +293,7 @@ a {
   width: 30%;
   padding: 8px;
 }
+
 .table__col2{
   text-align: left;
   background: rgb(255, 255, 255);
@@ -302,14 +302,118 @@ a {
   width: 70%;
   padding: 16px 8px;
 }
+
 .user__card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
-/* フッター */
 
+/* new周り */
+.photo-sell-contents {
+  background-color: #ffffff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-width: 500px;
+}
+
+.photo-sell-main {
+  background-color: #FFF;
+  width: 70vw;
+  min-width: 450px;
+  padding: 10vh 15vw;
+}
+
+.photo-sell-title {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.new-photo {
+  padding: 2vh 0;
+}
+
+.photo-text {
+  width: 100%;
+  padding: 16px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}
+
+.sell-btn-contents {
+  width: 100%;
+  text-align: center;
+}
+
+.sell-btn {
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border: 1px #a88734 solid;
+  width: 100%;
+  height: 50px;
+  font-size: 14px;
+  margin-bottom: 4vh;
+}
+
+.back-btn {
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+  border: 1px solid #aaa;
+  color: #111;
+  padding: 15px 35%;
+  text-decoration: none;
+}
+
+.photo-sell-footer {
+  background-color: #ffffff;
+  width: 60vw;
+  padding: 3ch 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inc {
+  font-size: 13px;
+  text-align: center;
+}
+
+/* show周り */
+.show__user {
+  display: block;
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 30px;
+}
+
+.show__hedding{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.show__image{
+  width: 40%;
+  margin: 0 auto;
+  border: rgb(255, 255, 255) solid 25px;
+}
+
+.photo__detail{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+/* フッター */
 .footer {
   background-color: rgb(243, 208, 113);
   padding: 10px 0;
@@ -333,7 +437,7 @@ a {
     width: 48%;
     margin-bottom: 40px;
   }
-  .prototype_image{
+  .photo_image{
     width: 60%;
   }
 }
@@ -356,7 +460,7 @@ a {
   .card__summary {
     font-size: 14px;
   }
-  .prototype_image{
+  .photo_image{
     width: 100%;
   }
   .table{
