@@ -8,9 +8,17 @@
   text-align : center;
 }
 
+.box {
+  width: 350px;
+  height: 430px;
+  margin: 0 auto;
+  border-radius: 4px;
+  border: 1px #ddd solid;
+}
+
 .box2 {
   width: 400px;
-  height: 1100px;
+  height: 1070px;
   margin: 0 auto;
   border-radius: 4px;
   border: 1px #ddd solid;
@@ -27,6 +35,7 @@ h1 {
   margin: 20px 0 10px 50px;
   padding-bottom: 4px;
   color: #111111;
+  text-align: center;
 }
 
 .box-email {
@@ -34,7 +43,20 @@ h1 {
 }
 
 .box-password {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.box-login {
+  margin-bottom: 26px;
+}
+
+.box-login input[type="submit"] {
+  border-style: none;
+  width: 100%;
+  height: 31px;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border-radius: 3px;
+  border: 1px #a88734 solid;
 }
 
 .box-email label, .box-password label {
@@ -55,8 +77,52 @@ h1 {
   padding: 0 7px;
 }
 
+.legal-text {
+  margin-top: 18px;
+  font-size: 12px;
+}
+
+.remember {
+  font-size: 13px;
+  margin-top: 18px;
+  padding-left: 3px;
+}
+
+.box-newusr p {
+  text-align: center;
+  font-size: 12px;
+  color: #767676;
+  margin-bottom: 14px;
+}
+
+.box-newusr p span {
+  text-decoration: line-through;
+  text-decoration-color: #e7e7e7;
+}
+
+.box-newusr a {
+  display: block;
+  width: 100%;
+  height: 31px;
+  font-size: 13px;
+  color: #111;
+  line-height: 31px;
+  text-align: center;
+  background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+  border-radius: 3px;
+  border: 1px #a2a6ac solid;
+}
+
+.box-newusr a:hover {
+  background: #e7e9ec;
+}
+
 .column-left {
   float: left;
+}
+
+.column-right {
+  float: right;
 }
 
 .box-password a {
@@ -137,9 +203,8 @@ h1 {
 
 .register-red-btn {
   width: 100%;
-  background: #ea982d;
-  border: 1px solid rgb(185, 185, 185);
-  color: #fff;
+  background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+  border: 1px #a88734 solid;
   line-height: 48px;
   font-size: 14px;
   border-radius: 4px;
