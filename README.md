@@ -13,8 +13,8 @@ Photo Bank(フォトバンク)
 https://photobank-35411.herokuapp.com/
 
 ## ログイン情報(テスト用)
-- Eメール：hoge@hoge.com
-- パスワード：hoge1234
+- Eメール：taro-yamada-2021@gmail.com
+- パスワード：taro1234
 
 # ペルソナ
 - 性別 主に男性
