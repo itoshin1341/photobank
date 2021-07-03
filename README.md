@@ -8,6 +8,7 @@ Photo Bank(フォトバンク)
 - 投稿編集機能
 - 投稿削除機能
 - コメント機能(予定)
+- いいね！機能(予定)
 
 # 本番環境
 https://photobank-35411.herokuapp.com/
