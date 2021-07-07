@@ -66,3 +66,5 @@ group :production do
 end
 
 gem 'carrierwave'
+
+gem 'pry-rails'

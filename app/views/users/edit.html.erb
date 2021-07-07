@@ -1,0 +1,129 @@
+<div class="photoicon">
+  <%= link_to image_tag('photoicon.png' , size: '200x200'), "/" %>
+</div>
+<div class="box2">
+  <div class="box-inner">
+    <%= form_with model: @user, class: 'new_user', local: true do |f| %>
+
+      <h1>編集入力フォーム</h1>
+      <div class="box-email">
+        <%= f.label :email, "Eメール" %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <div class="box-password">
+        <div class="a-row">
+          <div class="column-left">
+            <%= f.label :password, "パスワード　(６文字、英字・数字混合で設定)" %>
+          </div>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+          <div class="field">
+            <%= f.label :password_confirmation, "パスワード （確認用）" %>
+            <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+        <label class="form-text">ニックネーム</label>
+      </div>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", maxlength:"20" %>
+  </div>
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">お名前(全角)</label>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :last_name, class:"input-name", id:"last-name", placeholder:"例）山田" %>
+      <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例）太郎" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">お名前カナ(全角)</label>
+    </div>
+    <div class='input-name-wrap'>
+      <%= f.text_area :last_name_kana, class:"input-name", id:"last-name-kana", placeholder:"例）ヤマダ" %>
+      <%= f.text_area :first_name_kana, class:"input-name", id:"first-name-kana", placeholder:"例）タロウ" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">生年月日</label>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :birthday,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 1930,
+                    end_year: (Time.now.year - 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">お住まいの都道府県</label>
+      </div>
+      <%# 以下、'input-カラム名-wrap'のセレクタは未定義、必要であれば後で作成する %>
+      <div class='input-prefecture-wrap'>
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class:"input-prefecture", id:"prefecture_id"} %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">お住まいの市町村</label>
+      </div>
+      <div class='input-prefecture-wrap'>
+      <%= f.text_area :city, class:"input-default", id:"city", maxlength:"20" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">性別</label>
+      </div>
+      <%# 以下、'input-カラム名-wrap'のセレクタは未定義、必要であれば後で作成する %>
+      <div class='input-gender-wrap'>
+        <%= f.collection_select :gender_id, Gender.all, :id, :name, {}, {class:"input-gender", id:"item-category"} %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">自己紹介文</label>
+      </div>
+      <div class='input-introduction-wrap'>
+      <%= f.text_area :introduction, class:"input-default2", id:"introduction", maxlength:"400" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">アイコンの選択</label>
+      </div>
+      <div class="click-upload">
+        <p>
+          <small>下をクリックしてファイルをアップロード</small>
+        </p>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+    </div>
+
+      <div class="actions">
+        <%= f.submit "編集内容を登録" ,class:"register-red-btn" %>
+      </div>
+    <% end %>
+  </div>
+
+    <p class="inc">
+      Copyright © PhotoBank All rights reserved.
+    </p>
+
+</div>

@@ -12,7 +12,7 @@
       <% if user_signed_in? %>
         <div class="nav__right">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-          <%= link_to "マイページ", "#", class: :nav__btn %>
+          <%= link_to "マイページ", user_path(current_user.id), class: :nav__btn %>
           <%= link_to "　　投稿する　　", new_tweet_path, class: :nav__btn %>
         </div>
         <% else %>
@@ -32,7 +32,7 @@
         </h2>
         <div>
           <% if @user.image? %>
-            <%= image_tag @user.image.url %>
+            <%= image_tag(@user.image.url, size: '500x500') %>
           <% end %>
         </div>
         <table class="table">
@@ -61,12 +61,12 @@
             <td class="table__col2"><%= @user.introduction %></td>
           </tr>
         </table>
-        <%# if user_signed_in? && current_user.id == @user_id %>
-        <div class="prototype__manage">
-          <%# link_to "情報を編集する", "#", class: :prototype__btn %>
+        <% if user_signed_in? && current_user == @user %>
+        <div class="photo__manage">
+          <%= link_to "情報を編集する", edit_user_path, class: :photo__btn %>
           <%# link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
         </div>
-        <%# end %>
+        <% end %>
         <h2 class="page-heading">
           <%= "#{@user.nickname}様の投稿写真一覧です。"%>
         </h2>
