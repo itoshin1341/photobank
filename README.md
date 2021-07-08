@@ -49,10 +49,10 @@ Html, Scss, JavaScript
 MySQL, SequelPro
 
 ## インフラ（開発環境）
-Heroku, AWS（予定）
+Heroku, AWS
 
 ## Webサーバ（本番環境）
-nginx（予定）
+nginx
 
 ## アプリケーションサーバ（本番環境）
 unicorn（予定）
