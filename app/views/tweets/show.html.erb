@@ -31,7 +31,7 @@
           <%= @tweet.title %>
         </p>
         <div class="show__user">
-        <%= link_to "投稿者：#{@tweet.user.nickname}" %>
+        <%= link_to "投稿者：#{@tweet.user.nickname}",user_path(@tweet.user) %>
         </div>
         <% if user_signed_in? && current_user.id == @tweet.user_id %>
           <div class="photo__manage">
@@ -60,25 +60,26 @@
         <div class="photo__comments">
           <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
           <% if user_signed_in? %>
-            <%# form_with model: [@tweet,@comment], local: true do |f|%>
-              <div class="field">
-                <%# f.label :text, "コメント" %><br />
-                <%# f.text_field :text, id:"comment_text" %>
+            <%= form_with model: [@tweet,@comment], local: true do |f|%>
+              <div class="detail__title">
+                <%= f.label :text, "↓コメント入力欄↓" %><br />
+                <%= f.text_area :text, id:"comment_text" , size: "50x8",class: :form__size %>
               </div>
               <div class="actions">
-                <%# f.submit "送信する", class: :form__btn  %>
+                <%= f.submit "送信する", class: :send__btn %>
               </div>
-            <%# end %>
+            <% end %>
           <% end %> 
           <%# // ログインしているユーザーには上記を表示する %>
+          <p class= detail__title>コメント一覧</p>
           <ul class="comments_lists">
             <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <%# @comments.each do |comment|%>
+            <% @comments.each do |comment|%>
               <li class="comments_list">
-              <%# comment.text %>
-              <%# link_to comment.user.name, "/users/#{comment.user.id}",  class: :comment_user %>
+              <%= link_to "投稿者：#{comment.user.nickname}", "#{comment.user.id}",  class: :comment_user %>
+              <%= comment.text %>
               </li>
-            <%# end %>
+            <% end %>
           </ul>
         </div>
       </div>

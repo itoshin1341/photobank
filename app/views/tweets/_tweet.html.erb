@@ -8,7 +8,7 @@
         <%= tweet.prefecture.name %>
         <%= tweet.city %>
       </p>
-    <%= link_to "投稿者：#{tweet.user.nickname}", class: :card__user %>
+    <%= link_to "投稿者：#{tweet.user.nickname}", user_path(tweet.user), class: :card__user %>
     <%# link_to "#{tweet.user.name}", user_path(tweet.user), class: :card__user %>
   </div>
 </div>

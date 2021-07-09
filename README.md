@@ -110,10 +110,11 @@ Googleマップを活用し、より直感的に操作ができるようにし�
 
 ## Commentsテーブル
 
-| Column  | Type       | Options                       |
-| --------| ---------- | ----------------------------- |
-| user    | references | null: false, foreign_key:true |
-| message | text       | null: false                   |
+| Column    | Type       | Options                       |
+| --------- | ---------- | ----------------------------- |
+| text      | text       | null: false                   |
+| user      | references | null: false, foreign_key:true |
+| tweet     | references | null: false, foreign_key:true |
 
 ### Association
 
