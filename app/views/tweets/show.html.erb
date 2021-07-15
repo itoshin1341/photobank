@@ -71,16 +71,18 @@
             <% end %>
           <% end %> 
           <%# // ログインしているユーザーには上記を表示する %>
-          <p class= detail__title>コメント一覧</p>
-          <ul class="comments_lists">
-            <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <% @comments.each do |comment|%>
-              <li class="comments_list">
-              <%= link_to "投稿者：#{comment.user.nickname}", "#{comment.user.id}",  class: :comment_user %>
-              <%= comment.text %>
-              </li>
-            <% end %>
-          </ul>
+          <div class="comments__space">
+            <p class= detail__title>コメント一覧</p>
+            <ul class="comments_lists">
+              <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+              <% @comments.each do |comment|%>
+                <li class="comments_list">
+                <%= link_to "投稿者：#{comment.user.nickname}", "#{comment.user.id}",  class: :comment_user %>
+                <%= comment.text %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
