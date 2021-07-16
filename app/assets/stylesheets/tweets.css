@@ -126,6 +126,20 @@ a {
 
 
 /* メイン */
+.photo-blur {
+  filter: blur(10px);
+  animation: blur 3s linear forwards;
+}
+
+@keyframes blur {
+  0% {
+    filter: blur(10px);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
+
 .greeting{
   margin-bottom: 20px;
   display: flex;
@@ -202,7 +216,8 @@ a {
 }
 
 .hot__message {
-  margin: 20px;
+  padding-top: 40px;
+  padding-bottom: 20px;
   text-align : center;
 }
 
