@@ -52,10 +52,10 @@ MySQL, SequelPro
 Heroku, AWS
 
 ## Webサーバ（本番環境）
-nginx
+Heroku, AWS
 
 ## アプリケーションサーバ（本番環境）
-unicorn（予定）
+unicorn
 
 ## ソース管理
 GitHub, GitHubDesktop
