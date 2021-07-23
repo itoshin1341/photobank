@@ -65,8 +65,6 @@ group :production do
   gem 'unicorn', '5.4.1'
 end
 
-gem 'carrierwave'
-
 gem 'pry-rails'
 
 gem "aws-sdk-s3", require: false
@@ -74,3 +72,5 @@ gem "aws-sdk-s3", require: false
 gem 'fog-aws'
 
 gem 'dotenv-rails'
+
+gem 'carrierwave', '~> 2.0'
