@@ -11,7 +11,7 @@ Photo Bank (フォトバンク)
 - いいね！機能(予定)
 
 # 本番環境
-https://photobank-35411.herokuapp.com/
+http://18.180.124.193:3000/
 
 ## ログイン情報(テスト用)
 - Eメール：taro-yamada-2021@gmail.com
@@ -51,10 +51,10 @@ Html, Scss, JavaScript
 MySQL, SequelPro
 
 ## インフラ（開発環境）
-Heroku, AWS
+AWS
 
 ## Webサーバ（本番環境）
-Heroku, AWS
+AWS
 
 ## アプリケーションサーバ（本番環境）
 unicorn
