@@ -79,3 +79,4 @@ gem 'fog-aws'
 gem 'dotenv-rails'
 
 gem 'carrierwave', '~> 2.0'
+ 
