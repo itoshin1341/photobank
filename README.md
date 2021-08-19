@@ -53,7 +53,7 @@ http://18.180.124.193
 # 使用技術(開発環境)
 
 ## バックエンド
-Ruby, Ruby on Rails
+Ruby, Ruby On Rails
 
 ## フロントエンド
 Html, Scss, JavaScript,jQuery
