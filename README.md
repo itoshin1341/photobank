@@ -43,7 +43,26 @@ http://18.180.124.193
 - いいね！機能(予定)
 
 # DEMO
-準備中です。。
+## トップ画面（ログイン前）
+
+[![Image from Gyazo](https://i.gyazo.com/426cc1480ba1a67d7cc6bd659bed143e.gif)](https://gyazo.com/426cc1480ba1a67d7cc6bd659bed143e)
+
+## ログイン画面〜トップ画面（ログイン後）
+
+[![Image from Gyazo](https://i.gyazo.com/145acd0618da5bae530eca4751d842d5.gif)](https://gyazo.com/145acd0618da5bae530eca4751d842d5)
+
+## 詳細ページ遷移
+
+[![Image from Gyazo](https://i.gyazo.com/a98b5d8ac9c575f2626d126630664466.gif)](https://gyazo.com/a98b5d8ac9c575f2626d126630664466)
+
+## マイページ
+
+[![Image from Gyazo](https://i.gyazo.com/b106909566cb74e5fbd9e9633eb747ba.gif)](https://gyazo.com/b106909566cb74e5fbd9e9633eb747ba)
+
+## 投稿ページ
+
+[![Image from Gyazo](https://i.gyazo.com/cddc3d63ca261c9c083d566f73bf52bb.gif)](https://gyazo.com/cddc3d63ca261c9c083d566f73bf52bb)
+
 
 # 工夫したポイント
 とにかく見やすく、操作のしやすいWebアプリケーションになるようこだわりました。
@@ -53,7 +72,7 @@ http://18.180.124.193
 # 使用技術(開発環境)
 
 ## バックエンド
-Ruby, Ruby On Rails
+Ruby, Ruby on Rails
 
 ## フロントエンド
 Html, Scss, JavaScript,jQuery
