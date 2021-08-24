@@ -12,8 +12,8 @@ Photo Bank (フォト バンク)
 http://18.180.124.193
 
 ログイン情報(テスト用)
-- Eメール：taro-yamada-2021@gmail.com
-- パスワード：taro1234
+- Eメール：taro-yamada-2021@demo.com
+- パスワード：taro12345
 
 # ペルソナ
 - 性別 主に男性
