@@ -81,7 +81,7 @@ Html, Scss, JavaScript,jQuery
 MySQL, SequelPro
 
 ## インフラ（開発環境）
-AWS(EC2),Capistrano
+AWS(EC2,S3),Capistrano
 
 ## Webサーバ（本番環境）
 nginx
